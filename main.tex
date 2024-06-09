@@ -1,0 +1,95 @@
+\documentclass[12pt, twoside]{book}
+\usepackage[a4paper, margin=2cm, inner=3cm]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{emptypage}
+\usepackage{blindtext}
+
+\title{\LaTeX{} Book Example}
+\author{YNSRC}
+\date{June 2024}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Chapter One}
+
+\section{Section One}
+\blindtext[2]
+
+\subsection{Sub-Section One}
+\blindtext[3]
+
+\subsubsection{Sub-Sub-Section One}
+\blindtext[4]
+
+\subsubsection{Sub-Sub-Section Two}
+\blindtext[2]
+
+\subsection{Sub-Section Two}
+\blindtext[3]
+
+\section{Section Two}
+\blindtext[4]
+
+\chapter{Chapter Two}
+
+\section{Section One}
+\blindtext[3]
+
+\section{Section Two}
+\blindtext
+
+\chapter{Chapter Three}
+\section{Text Formatting}
+You can use \textcolor{blue}{colored} text or \colorbox{BurntOrange}{background colored} texts. Also \textbf{bold}, \textit{italic}, \underline{underlined} or \texttt{typewriter font} texts or \large{large} text.
+
+\section{Math}
+$$\int_0^1{\sin x}$$
+
+Inline symbols like $\infty$ or expressions $f(x) = x^2 + 2x + 4$ also possible.
+
+\section{Bullet List}
+
+\begin{itemize}
+    \item Item 1
+    \item Item 2
+    \item Item 3
+    \item Item 4
+    \item Item 5
+\end{itemize}
+
+\section{Numbered List}
+
+\begin{enumerate}
+    \item Item A
+    \item Item B
+    \item Item C
+    \item Item D
+    \item Item E
+\end{enumerate}
+
+\section{Tables}
+
+\begin{center}
+        \begin{tabular}{|c|c|} \hline
+        a & b \\ \hline
+        c & d \\ \hline
+        e & f \\ \hline
+    \end{tabular} \\[12pt]
+    Table with all borders.
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+        \begin{tabular}{cc}
+        a & b \\
+        c & d \\
+        e & f \\
+    \end{tabular} \\[12pt]
+    Table with no borders.
+\end{center}
+
+\end{document}
