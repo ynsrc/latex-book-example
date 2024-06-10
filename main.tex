@@ -6,6 +6,8 @@
 \usepackage{blindtext}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
+\graphicspath{ {./images} }
 
 \renewcommand{\chaptername}{Lecture}
 
@@ -41,6 +43,8 @@ The Foreword is written by someone who is not the book's author.
 The Preface is written by the book's author.
 
 \tableofcontents
+\listoffigures
+\listoftables
 
 \mainmatter
 
@@ -83,7 +87,8 @@ You can use \textcolor{blue}{colored} text or
 \section{Math}
 $$\int_0^1{\sin x} \ dx$$
 
-Inline symbols like $\infty$ or expressions $f(x) = x^2 + 2x + 4$ also possible.
+Inline symbols like $\infty$ or expressions like 
+$f(x) = x^2 + 2x + 4$ also possible.
 
 \section{Bullet List}
 
@@ -106,24 +111,65 @@ Inline symbols like $\infty$ or expressions $f(x) = x^2 + 2x + 4$ also possible.
 
 \section{Tables}
 
-\begin{center}
-        \begin{tabular}{|c|c|} \hline
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|} \hline
         a & b \\ \hline
         c & d \\ \hline
         e & f \\ \hline
-    \end{tabular} \\[12pt]
-    Table with all borders.
-\end{center}
+    \end{tabular}
+    \caption{Table with all borders.}
+\end{table}
 
-\vspace{1cm}
+\vspace{12pt}
 
-\begin{center}
-        \begin{tabular}{cc}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{cc}
         a & b \\
         c & d \\
         e & f \\
-    \end{tabular} \\[12pt]
-    Table with no borders.
-\end{center}
+    \end{tabular}
+    \caption{Table with no borders.}
+\end{table}
+
+\vspace{12pt}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+        a & b \\
+        c & d \\
+        e & f \\
+    \end{tabular}
+    \caption{Table with only vertical borders.}
+\end{table}
+
+\vspace{12pt}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{cc} \hline
+        a & b \\ \hline
+        c & d \\ \hline
+        e & f \\ \hline
+    \end{tabular}
+    \caption{Table with only horizontal borders.}
+\end{table}
+
+\clearpage
+\section{Figures (Images)}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.25]{penguin}
+    \caption{A penguin image. Photo: 
+        \href
+        {https://www.pexels.com/photo/penguin-on-ice-covered-ground-4361073/}
+        {David Peterson}
+        .
+    }
+    \label{fig:enter-label}
+\end{figure}
 
 \end{document}
