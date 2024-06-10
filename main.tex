@@ -1,9 +1,28 @@
 \documentclass[12pt, twoside]{book}
-\usepackage[a4paper, margin=2.5cm, inner=3cm]{geometry}
+\usepackage[a4paper, margin=2.5cm, inner=4cm]{geometry}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage{graphicx}
 \usepackage{emptypage}
 \usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\renewcommand{\chaptername}{Lecture}
+
+\titleformat
+{\chapter} % command
+[display] % shape
+{ \normalfont\Large\bfseries} % format
+{} % label
+{1ex} % sep
+{
+    \rule{\textwidth}{1pt}
+    \centering
+} % before-code
+[
+\vspace{-1.5ex}
+\rule{\textwidth}{1pt}
+] % after-code
 
 \title{\LaTeX{} Book Example}
 \author{YNSRC}
@@ -11,7 +30,19 @@
 
 \begin{document}
 \maketitle
+
+\frontmatter %Use lowercase Roman numerals for page numbers
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+The Foreword is written by someone who is not the book's author.
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+The Preface is written by the book's author.
+
 \tableofcontents
+
+\mainmatter
 
 \chapter{Chapter One}
 
@@ -31,7 +62,7 @@
 \blindtext[2]
 
 \section{Section Two}
-\blindtext
+\blindtext[3]
 
 \chapter{Chapter Two}
 
@@ -42,11 +73,15 @@
 \blindtext
 
 \chapter{Chapter Three}
+
 \section{Text Formatting}
-You can use \textcolor{blue}{colored} text or \colorbox{BurntOrange}{background colored} texts. Also \textbf{bold}, \textit{italic}, \underline{underlined} or \texttt{typewriter font} texts or \large{large} text.
+You can use \textcolor{blue}{colored} text or
+\colorbox{BurntOrange}{background colored} texts. Also
+\textbf{bold}, \textit{italic}, \underline{underlined} or
+\texttt{typewriter font} texts or \large{large} text.
 
 \section{Math}
-$$\int_0^1{\sin x}$$
+$$\int_0^1{\sin x} \ dx$$
 
 Inline symbols like $\infty$ or expressions $f(x) = x^2 + 2x + 4$ also possible.
 
