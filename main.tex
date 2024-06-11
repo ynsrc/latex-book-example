@@ -1,4 +1,4 @@
-\documentclass[12pt, twoside]{book}
+\documentclass[12pt, a4paper]{book}
 \usepackage[a4paper, margin=2.5cm, inner=4cm]{geometry}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage{graphicx}
@@ -7,98 +7,100 @@
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
+\usepackage{multicol}
 \graphicspath{ {./images} }
 
+% Prevent adding empty pages (chapters can begin at any odd or even page)
+\let\cleardoublepage\clearpage
+
+% Replace Chapter to Lecture
 \renewcommand{\chaptername}{Lecture}
 
-\titleformat
-{\chapter} % command
-[display] % shape
-{ \normalfont\Large\bfseries} % format
-{} % label
+% Add horizontal lines before and after all chapter titles
+\titleformat{\chapter}[display]
+{\normalfont\Large\bfseries} % format
+{} % label before chapter title (empty)
 {1ex} % sep
-{
-    \rule{\textwidth}{1pt}
-    \centering
-} % before-code
-[
-\vspace{-1.5ex}
-\rule{\textwidth}{1pt}
-] % after-code
+{\rule{\textwidth}{1pt}\centering\\} % before-code
+[\vspace{-1.5ex}\rule{\textwidth}{1pt}] % after-code
 
+% Book Information
 \title{\LaTeX{} Book Example}
 \author{YNSRC}
 \date{June 2024}
 
 \begin{document}
+
+% Make cover page with book information
 \maketitle
 
-\frontmatter %Use lowercase Roman numerals for page numbers
+% Use lowercase Roman numerals for page numbers (i, ii, iii, ...)
+\frontmatter
+
+% Use large font size
+\large
+
+% Forword Chapter
 \chapter*{Foreword}
 \addcontentsline{toc}{chapter}{Foreword}
-The Foreword is written by someone who is not the book's author.
+The Foreword is written by someone who is not the book's author. \blindtext[5]
 
+% Preface Chapter
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
-The Preface is written by the book's author.
 
+The Preface is written by the book's author. \blindtext[5]
+
+% Use normal font size
+\normalsize
+
+% TOC Chapter
 \tableofcontents
-\listoffigures
-\listoftables
 
+% List of Figures Chapter 
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+% List of Tables Chapter
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% Now Use Arabic numerals for page numbers (1, 2, 3, ...)
 \mainmatter
 
+% First Chapter
 \chapter{Chapter One}
 
-\section{Section One}
-\blindtext[2]
-
-\subsection{Sub-Section One}
-\blindtext[3]
-
-\subsubsection{Sub-Sub-Section One}
-\blindtext[4]
-
-\subsubsection{Sub-Sub-Section Two}
-\blindtext[2]
-
-\subsection{Sub-Section Two}
-\blindtext[2]
-
-\section{Section Two}
-\blindtext[3]
-
-\chapter{Chapter Two}
-
-\section{Section One}
-\blindtext[3]
-
-\section{Section Two}
-\blindtext
-
-\chapter{Chapter Three}
-
 \section{Text Formatting}
+
 You can use \textcolor{blue}{colored} text or
 \colorbox{BurntOrange}{background colored} texts. Also
 \textbf{bold}, \textit{italic}, \underline{underlined} or
 \texttt{typewriter font} texts or \large{large} text.
 
+% Use normal font size
+\normalsize
+
 \section{Math}
+
 $$\int_0^1{\sin x} \ dx$$
 
 Inline symbols like $\infty$ or expressions like 
 $f(x) = x^2 + 2x + 4$ also possible.
 
-\section{Bullet List}
+\section{Bullet List in Two Columns}
 
-\begin{itemize}
-    \item Item 1
-    \item Item 2
-    \item Item 3
-    \item Item 4
-    \item Item 5
-\end{itemize}
+\begin{multicols}{2}
+    \begin{itemize}
+            \item Item 1
+            \item Item 2
+            \item Item 3
+            \item Item 4
+            \item Item 5
+            \item Item 6
+    \end{itemize}
+\end{multicols}
+
 
 \section{Numbered List}
 
@@ -108,6 +110,8 @@ $f(x) = x^2 + 2x + 4$ also possible.
     \item Item C
     \item Item D
 \end{enumerate}
+
+\clearpage
 
 \section{Tables}
 
@@ -171,5 +175,33 @@ $f(x) = x^2 + 2x + 4$ also possible.
     }
     \label{fig:enter-label}
 \end{figure}
+
+\chapter{Chapter Two}
+
+\section{Section One}
+\blindtext[2]
+
+\subsection{Sub-Section One}
+\blindtext[3]
+
+\subsubsection{Sub-Sub-Section One}
+\blindtext[4]
+
+\subsubsection{Sub-Sub-Section Two}
+\blindtext[2]
+
+\subsection{Sub-Section Two}
+\blindtext[2]
+
+\section{Section Two}
+\blindtext[3]
+
+\chapter{Chapter Two}
+
+\section{Section One}
+\blindtext[3]
+
+\section{Section Two}
+\blindtext
 
 \end{document}
